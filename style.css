@@ -1,5 +1,5 @@
 /* ================================================================
-   GAPCHECKER PRO - ULTIMATE CSS v4.5
+   GAPCHECKER PRO - ULTIMATE CSS v6.2.0
    Motivation Premier X Support Link Box © 2026
    ================================================================ */
 
@@ -2349,3 +2349,129 @@ textarea:focus ~ .textarea-border {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Gap List Styles */
+.gap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.gap-total {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.gap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.gap-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gap-item:hover {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+}
+
+.gap-item.removing {
+    animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.gap-number {
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 50%;
+}
+
+.gap-name {
+    flex: 1;
+    font-size: 0.95rem;
+    word-break: break-word;
+}
+
+/* Round Cross Button */
+.gap-remove-btn {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #e53935);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+}
+
+.gap-remove-btn i {
+    font-size: 10px;
+}
+
+.gap-item:hover .gap-remove-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gap-remove-btn:hover {
+    background: linear-gradient(135deg, #e53935, #c62828);
+    transform: scale(1.1) rotate(90deg);
+}
+
+.no-gap {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    color: var(--accent-green);
+}
+
+@media (max-width: 480px) {
+    .gap-remove-btn {
+        opacity: 1;
+        transform: scale(1);
+    }
+   }
